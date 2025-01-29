@@ -1,0 +1,31 @@
+﻿<div style="display:flex;flex-direction:column;gap:5px;background-color:antiquewhite;">
+    <input id="message" placeholder="Message" />
+    <input id="username" placeholder="User Name" />
+    <button class="btn btn-primary" id="sendButton">Gonder</button>
+</div>
+
+<ul id="list" style="list-style:none;">
+</ul>
+<script src="~/lib/microsoft-signalr/signalr.min.js"> </script>
+<script defer>
+    const connect = new signalR.HubConnectionBuilder().withUrl("/chat").build();
+    console.log(connect)
+    
+    connect.on("ReceiverMessage", (username, message) => {
+        let ul = document.querySelector("#list");
+        const element = `<li>${username} : ${message}</li>`;
+        ul.innerHTML += element;
+    });
+
+    connect.start().then(() => {
+        console.log("Baglanti saglandi :D");
+    }).catch(err => console.log(err));
+
+    document.querySelector("#sendButton").addEventListener("click", () => {
+        const message = document.querySelector("#message");
+        const username = document.querySelector("#username");
+        connect.invoke("SendMessage", username.value, message.value).catch(err => {
+            console.log(err)
+        });
+    })
+</script>

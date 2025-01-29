@@ -1,0 +1,39 @@
+﻿@using GeldiGeliyor.WebUI.Models.BasketTransaction.BasketModels
+@model Basket
+
+<h1 id="message" style="color:orange">@ViewBag.Message</h1>
+<script defer>
+    setTimeout(() => {
+        let messageInput = document.querySelector("#message")
+        messageInput.addEventListener("style", "visibility:hidden")
+    }, 1000)
+</script>
+
+<table>
+    <thead>
+        <tr>
+            <th>ProductID</th>
+            <th>Product Name</th>
+            <th>Category Name</th>
+            <th>Seller Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.BasketItems)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryName</td>
+                <td>@item.SellerName</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td style="a{border:dashed;border-radius:10px;padding:5px;background-color:chartreuse;margin:2px;}">@Html.ActionLink("+", "Increase", "Basket", new { productId = item.ProductId }) | @Html.ActionLink("-", "Reduce", "Basket", new { productId = item.ProductId })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h1><mark>AHANDA ODEYECEGIN FIYAT : @Model.TotalPrice</mark></h1>

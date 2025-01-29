@@ -1,0 +1,24 @@
+﻿@using GeldiGeliyor.Business.Concrete.Dtos.ProductDtos
+@using GeldiGeliyor.Entities.Concrete
+<a style="width=100px;height=50px;background-color:chartreuse;" asp-area="AdminPanel" asp-action="Index" asp-controller="Product" >Admin alanina geç</a>
+
+@model List<ProductGetDto>
+<div class="main-container">
+    @foreach (var item in Model)
+    {
+        <a href="/Product/Detail/@item.Id">
+        <div class="card">
+            @foreach (var resim in item.Pictures)
+            {
+                <img src="@resim.Image"/>
+            }
+            <h3>@item.Name</h3>
+            <h4>@item.Price</h4>
+            <h5>@item.Seller.CompanyName</h5>
+        </div>
+        </a>
+    }
+</div>
+
+<h1>En Çok Satilan 10 ürün</h1>
+@await Component.InvokeAsync("TopSend", new{x = "Gonderdim mesajimi sen aldin mi"})

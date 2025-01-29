@@ -1,0 +1,15 @@
+
+﻿@using GeldiGeliyor.Business.Concrete.Dtos.ProductDtos
+@model ProductGetDto
+
+
+<h4> @Model.Name </h4>
+<h4>@Model.Price</h4>
+@* <h4>@Model.Seller.CompanyName</h4>
+<h4>@Model.Seller.CompanyAddress</h4>
+<h4>@Model.Category.Name</h4>
+<h4>@Model.Category.Description</h4>
+ *@<h4>@Model.StockAmount</h4>
+<p>@Model.Description</p>
+<a class="btn btn-primary" href="/Basket/Increase ? productId=@Model.Id">Sepete Ekle</a>
+

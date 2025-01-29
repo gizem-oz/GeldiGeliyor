@@ -1,0 +1,19 @@
+﻿<form asp-action="Create" method="post">
+    <select name="CategoryId">
+        @if (ViewBag.Categories is not null && ViewBag.Categories.Count > 0)
+        {
+            @foreach (var item in ViewBag.Categories)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        }
+    </select>
+    <input name="Price" placeholder="Price" />
+    <input name="StockAmount" placeholder="Stock Amount" />
+    <input name="Description" placeholder="Description" />
+    <input name="Name" placeholder="Name" required/>
+    <input name="CreateDate" type="date" placeholder="Create Date" />
+    <input type="file" name="formFiles" multiple>
+
+    <input type="submit" value="Create" class="btn btn-primary" />
+</form>

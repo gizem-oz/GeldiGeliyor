@@ -1,0 +1,210 @@
+﻿
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #0f0c29,#302b63,#24243e);
+}
+
+.login-img {
+    position: absolute; /* Resmi ana div'in üstüne al */
+    top: 2%; /* Yukarıdan 0 piksel boşluk */
+    left: 50%; /* Soldan ortala */
+    transform: translateX(-50%); /* Tam ortalama için sola kaydır */
+    z-index: 1; /* Diğer içeriklerin üzerinde olmasını sağlar */
+}
+
+    .login-img img {
+        height: 120px;
+        width: 100%;
+    }
+
+.main {
+    position: relative;
+    width: 550px;
+    height: 500px;
+    /* background: red; */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+#chk {
+    display: none;
+}
+
+.login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+    .login h5 {
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+    }
+
+label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .6s ease-in-out;
+}
+
+.signup h4 {
+    color: #fff;
+}
+
+.login input {
+    width: 60%;
+    height: 10px;
+    background-color: #e0dede;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.signup input {
+    width: 30%;
+    height: 10px;
+    background-color: #e0dede;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.login-btn {
+    width: 40%;
+    height: 30px;
+    margin: 10px auto;
+    display: block;
+    justify-content: center;
+    color: #fff;
+    background-color: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+    .login-btn:hover {
+        background: #6d44b8;
+    }
+
+.signup {
+    position: relative;
+    height: 100%;
+    background-color: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
+}
+
+.register-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10%;
+    transition: transform 0.6s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.shrink {
+    transform: scale(.9); 
+    width: 50%;
+    position: absolute; 
+    top: -16px; 
+    left: 24%;
+    height: 15px;
+}
+
+.signup .user-frm-btn, .admin-frm-btn {
+    background-color: #573b8a;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+    margin-left: 25%;
+    width: 50%;
+    height: 36px;
+}
+
+.admin-btn, .user-btn {
+    width: 40%;
+    height: 50px;
+    margin: 5% auto;
+    color: #fff;
+    background-color: #573b8a;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: font-size .6s ease-in-out;
+    cursor: pointer;
+}
+
+    .admin-btn:hover, .user-btn:hover, .user-frm-btn:hover, .admin-frm-btn:hover {
+        background-color: #6d44b8;
+        font-size: 1.2em;
+        transition: font-size .6s ease-in-out;
+    }
+
+.user-form, .admin-form {
+    display: none; 
+}
+
+.user-frm, .admin-frm {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.show {
+    display: block; 
+}
+
+.input-group {
+    display: none;
+}
+
+.signup label {
+    color: #573b8a;
+    transform: scale(.6);
+}
+
+#chk:checked ~ .signup {
+    transform: translateY(-500px);
+}
+
+    #chk:checked ~ .signup label {
+        transform: scale(.7);
+    }
+
+#chk:checked ~ .login label {
+    transform: scale(.4);
+    overflow: none;
+}

@@ -1,0 +1,6 @@
+@GeldiGeliyor.Api_HostAddress = http://localhost:5212
+
+GET {{GeldiGeliyor.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

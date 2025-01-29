@@ -1,0 +1,26 @@
+﻿@using GeldiGeliyor.Business.Concrete.Dtos.CategoryDtos
+@model List<CategoryGetDto>
+
+    <table>
+    <tr>
+        <th> Id </th>
+        <th> Name </th>
+        <th> Description </th>
+        <th> Datetime </th>
+        <th> CreateDate </th>
+        <th> DeleteDate </th>
+        <th> Status </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.DateTime</td>
+            <td>@item.CreateDate</td>
+            <td>@item.DeleteDate</td>
+            <td>@item.Status</td>
+        </tr>
+    }
+</table>

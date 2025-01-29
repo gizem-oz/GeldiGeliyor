@@ -1,0 +1,74 @@
+﻿@* <form asp-action="SellerRegister" method="post">
+    <input type="text" name="CompanyName" placeholder="Şirket Adı" />
+    <input type="text" name="CompanyAddress" placeholder="Şirket Adresi" />
+    <input type="email" name="Email" placeholder="e-Mail" />
+    <input type="tel" name="PhoneNumber" placeholder="Telefon Numarası" />
+    <input type="text" name="UserName" placeholder="Kullanıcı Adı" />
+    <input type="password" name="Password" placeholder="Parola" />
+    <input type="submit" value="Üye Ol" />
+
+</form>
+ *@
+
+
+@{
+    Layout = null;
+}
+<link rel="stylesheet" type="text/css" href="~/css/Login.css" />
+<script src="~/js/Login.js" defer></script>
+<div class="login-img">
+    <img src="/img/geldigeliyorlogoo.png" alt="logo">
+</div>
+
+<div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+    <div class="login">
+        <form action="#">
+            <label for="chk" id="login-lbl" aria-hidden="true">Giriş Yap</label>
+            <input type="email" placeholder="E-Posta " required>
+            <input type="password" placeholder="Şİfre" required>
+            <button class="login-btn">Giriş Yap</button>
+            <h5>Hala kayıtlı değil misin ?</h5>
+
+        </form>
+    </div>
+
+
+    <!--SEÇİLECEK BUTONLAR BAŞLANGIÇ-->
+    <div class="signup">
+        <label for="chk" id="register-lbl" aria-hidden="true">Kayıt Ol</label>
+        <div class="register-btn">
+            <button class="admin-btn" id="adminBtn">Satıcı</button>
+            <button class="user-btn" id="userBtn">Müşteri</button>
+        </div>
+        <!--SEÇİLECEK BUTONLAR SON-->
+        <!-- Kullanıcı Formu başlangıç-->
+        <div class="user-form" id="userForm" style="display:none;">
+            <form action="#" class="user-frm">
+                <input type="text" placeholder="Müşteri İsmi" required>
+                <input type="text" placeholder="Müşteri Soyismi" required>
+                <input type="text" placeholder="Kullanıcı Adı" required>
+                <input type="email" placeholder="E-Posta" required>
+                <input type="tel" placeholder="Telefon numarası" required>
+                <input type="password" placeholder="Şifre" required>
+                <button class="user-frm-btn">Kayıt Ol</button>
+            </form>
+        </div>
+        <!--kullanıcı formu son-->
+        <!-- Admin Formu Baş-->
+        <div class="admin-form" id="adminForm" style="display:none;">
+            <form action="#" class="admin-frm">
+                <input type="text" placeholder="Satıcı Ad" required>
+                <input type="text" placeholder="Satıcı Soyad" required>
+                <input type="text" placeholder="Kullanıcı Adı" required>
+                <input type="email" placeholder="E-Posta" required>
+                <input type="tel" placeholder="Telefon numarası" required>
+                <input type="password" placeholder="Şifre" required>
+
+                <button class="admin-frm-btn">Kayıt Ol</button>
+            </form>
+            <!-- Admin Formu Son -->
+        </div>
+
+    </div>
